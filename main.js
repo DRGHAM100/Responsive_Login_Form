@@ -1,18 +1,18 @@
-const inputs = document.querySelectorAll('.input');
+$(function(){
 
-function focusFunc(){
-    let parent = this.parentNode.parentNode;
-    parent.classList.add('focus');
-}
+    'use strict';
 
-function blurFunc(){
-    let parent = this.parentNode.parentNode;
-    if(this.value ==""){
-        parent.classList.remove('focus');
-    }
-}
+    $('input[type=text]').focus(function(){
+        $('.input-div.one').addClass('focus');
+    }).blur(function(){
+        $('.input-div.one').removeClass('focus');
+    });
 
-inputs.forEach(input =>{
-    input.addEventListener('focus', focusFunc);
-    input.addEventListener('blur', blurFunc);
+    $('input[type=password]').focus(function(){
+        $('.input-div.two').addClass('focus');
+    }).blur(function(){
+        $('.input-div.two').removeClass('focus');
+    });
+
+
 });
